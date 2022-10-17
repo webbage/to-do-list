@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -134,14 +135,4 @@ res.render("list", { listTitle: foundList.name, newItem: foundList.items});
 
 
 
-
-
-// app.get("/about", function(req, res) {
-//   res.render("about");
-// });
-
-
-
-app.listen(2017, function() {
-  console.log("3aesh")
-});
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
